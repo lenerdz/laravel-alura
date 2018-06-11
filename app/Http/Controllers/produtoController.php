@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\DB;
 use Request;
+use Estoque\Produto;
 
 class produtoController extends Controller {
     public function lista() {
-        $produtos = DB::select('select * from produtos');
-
+        $produtos = Produto::all();
         // return view('listagem')->with('produtos', $produtos);
         // return view('listagem')->withProdutos($produtos); //magic method
         // return view('listagem', ['produtos' => $produtos]);
@@ -23,9 +23,9 @@ class produtoController extends Controller {
     public function mostra() {
         // $id = Request::input('id', '1');
         $id = Request::route('id');
-        $produto = DB::select('select * from produtos where id = ?', [$id]);
+        $produto = Produto::find($id);
         if(empty($produto)) return "Produto não encontrado";
-        return view('produtos/detalhes')->with('p', $produto[0]);
+        return view('produtos/detalhes')->with('p', $produto);
     }
 
     public function novo() {
