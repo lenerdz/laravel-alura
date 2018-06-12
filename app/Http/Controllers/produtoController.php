@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\DB;
 use Request;
 use Estoque\Produto;
+use Validator;
+use Estoque\Http\Requests\ProdutoRequest;
 
 class produtoController extends Controller {
     public function lista() {
@@ -32,9 +34,9 @@ class produtoController extends Controller {
         return view('produtos/formulario');
     }
 
-    public function adiciona() {
-        $params = Request::all();
-        $produto = new Produto($params);
+    public function adiciona(ProdutoRequest $request) {
+        // $params = Request::all();
+        // $produto = new Produto($params);
         // $produto->nome = Request::input('nome');
         // $produto->quantidade = Request::input('quantidade');
         // $produto->valor = Request::input('valor');
@@ -42,9 +44,9 @@ class produtoController extends Controller {
 
         //DB::insert('insert into produtos (nome, quantidade, valor, descricao) values (?,?,?,?)', array($nome, $quantidade, $valor, $descricao));
 
-        $produto->save();
+        // $produto->save();
 
-        //Produto::create(Request::all()); //Faz tudo em uma linha só... :v
+        Produto::create($request->all()); //Faz tudo em uma linha só... :v
 
         // return view('produtos/adiciona')->withNome($nome);
         return redirect('produtos/')->withInput(Request::only('nome'));

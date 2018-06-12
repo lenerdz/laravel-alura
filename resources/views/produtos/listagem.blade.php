@@ -5,8 +5,8 @@
   <div class="alert alert-danger">
     Você não tem nenhum produto cadastrado.
   </div>
-
  @else
+ 
     <h1>Listagem de produtos</h1>
     <table class="table table-striped table-bordered table-hover">
         <thead>
@@ -15,8 +15,9 @@
                 <th>Valor</th>
                 <th>Descrição</th>
                 <th>Quantidade</th>
-                <th>Ver mais</th>
-                <th>Excluir</th>
+                <th>Tamanho</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td>{{$p->valor}}</td>
                 <td>{{$p->descricao}}</td>
                 <td>{{$p->quantidade}}</td>
+                <td>{{$p->tamanho}}</td>
                 <td><a href="/produtos/mostra/{{$p->id}}"><i class="fas fa-search"></i></a></td>
                 <td><a href="/produtos/remove/{{$p->id}}"><i class="fas fa-trash"></i></a></td>
             </tr>
