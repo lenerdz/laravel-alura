@@ -16,6 +16,7 @@
                 <th>Descrição</th>
                 <th>Quantidade</th>
                 <th>Ver mais</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td>{{$p->descricao}}</td>
                 <td>{{$p->quantidade}}</td>
                 <td><a href="/produtos/mostra/{{$p->id}}"><i class="fas fa-search"></i></a></td>
+                <td><a href="/produtos/remove/{{$p->id}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             @endforeach
         </tbody>
