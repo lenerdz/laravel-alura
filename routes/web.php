@@ -26,3 +26,7 @@ Route::get('/produtos/json', 'ProdutoController@listaJson');
 //Route::get('/produtos/mostra/', 'produtoController@mostra');
 Route::get('/produtos/mostra/{id}', 'produtoController@mostra')->where('id', '[0-9]+');
 Route::get('/produtos/remove/{id}', 'produtoController@remove')->where('id', '[0-9]+');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

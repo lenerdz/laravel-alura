@@ -34,7 +34,8 @@ class ProdutoRequest extends FormRequest
 
     public function messages() {
         return [
-            'required' => 'O :attribute é obrigatório.'
+            'required' => 'O :attribute é obrigatório.',
+            'min' => 'O :attribute é curto demais.'
         ];
     }
 }

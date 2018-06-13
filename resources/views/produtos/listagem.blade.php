@@ -14,8 +14,8 @@
                 <th>Nome</th>
                 <th>Valor</th>
                 <th>Descrição</th>
-                <th>Quantidade</th>
                 <th>Tamanho</th>
+                <th></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -26,8 +26,8 @@
                 <td scope="row">{{$p->nome}}</td>
                 <td>{{$p->valor}}</td>
                 <td>{{$p->descricao}}</td>
-                <td>{{$p->quantidade}}</td>
                 <td>{{$p->tamanho}}</td>
+                <td>{{$p->quantidade}}</td>
                 <td><a href="/produtos/mostra/{{$p->id}}"><i class="fas fa-search"></i></a></td>
                 <td><a href="/produtos/remove/{{$p->id}}"><i class="fas fa-trash"></i></a></td>
             </tr>
